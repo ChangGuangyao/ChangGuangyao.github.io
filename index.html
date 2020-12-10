@@ -152,6 +152,162 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-HTTP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/10/HTTP/">HTTP</a>
+    </h1>
+  
+
+        
+        <a href="/2020/12/10/HTTP/" class="archive-article-date">
+  	<time datetime="2020-12-10T07:05:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-TCP-IP的分层管理"><a href="#1-TCP-IP的分层管理" class="headerlink" title="1. TCP/IP的分层管理"></a>1. TCP/IP的分层管理</h1><ul>
+<li><p>TCP/IP一共划分为四层：<strong>应用层、传输层、网络层和数据链路层</strong>，不同的层次有不同的任务</p>
+<ul>
+<li><p>应用层：应用层的任务是通过应用进程间的交互来完成特定网络应用</p>
+</li>
+<li><p>传输层：传输层的任务是负责向两台主机进程之间的通信提供通用的数据传输服务。传输层主要使用以下两种协议</p>
+<ul>
+<li>传输控制协议TCP：面向连接的，可靠的数据传输服务</li>
+<li>用户数据协议UDP：无连接的，尽最大努力交付的数据传输服务，不可靠</li>
+</ul>
+</li>
+<li><p>网络层：网络层的任务是选择合适的网间路由和交换节点，确保数据及时传送</p>
+</li>
+<li><p>数据链路层：用来处理连接网络的硬件部分。包括硬件设备驱动、网络适配器等</p>
+<img src="/2020/12/10/HTTP/image-20201210153054521.png" alt="image-20201210153054521" style="zoom:50%;">
+
+<ul>
+<li>发送端在层与层之间传输数据时，每经过一层时都会被打上一个该层的首部信息，接收端在层与层之间传输数据时，每经过一层时都会把对应的首部消去</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="2-TCP连接的建立-三次握手"><a href="#2-TCP连接的建立-三次握手" class="headerlink" title="2. TCP连接的建立(三次握手)"></a>2. TCP连接的建立(三次握手)</h1><ol>
+<li><p>发送端首先发送一个带SYN标志的数据包给对方。</p>
+</li>
+<li><p>接收端收到后，回传一个带有SYN/ACK标志的数据包以表示传达确认信息</p>
+</li>
+<li><p>发送端再回传一个带有ACK标志的数据包，代表握手结束</p>
+<p><img src="/2020/12/10/HTTP/image-20201210154402416.png" alt="image-20201210154402416"></p>
+</li>
+</ol>
+<h1 id="3-TCP连接的释放-四次挥手"><a href="#3-TCP连接的释放-四次挥手" class="headerlink" title="3. TCP连接的释放(四次挥手)"></a>3. TCP连接的释放(四次挥手)</h1><ol>
+<li><p>客户端发送一个连接释放报文(报文首部FIN=1)，用来关闭客户端到服务器的数据传送</p>
+</li>
+<li><p>服务器收到FIN，发回一个ACK，确认序号为收到的序号+1。此时服务器端处于半关闭状态，可以继续向客户端发送数据，客户端也必须接受</p>
+</li>
+<li><p>服务器关闭与客户端的连接，发送一个FIN给客户端</p>
+</li>
+<li><p>客户端发回ACK报文确认。服务器只要收到了客户端发出的确认，会立即进入关闭状态。</p>
+<img src="/2020/12/10/HTTP/image-20201210160855268.png" alt="image-20201210160855268" style="zoom:80%;">
+
+</li>
+</ol>
+<h1 id="4-流量控制和拥塞控制"><a href="#4-流量控制和拥塞控制" class="headerlink" title="4. 流量控制和拥塞控制"></a>4. 流量控制和拥塞控制</h1><ul>
+<li><p>流量控制：TCP的流量控制是利用滑动窗口机制实现的，接收方在返回的数据中会包含自己的接收窗口大小，以控制发送方的数据发送</p>
+</li>
+<li><p>拥塞控制：防止过多的数据注入到网络中</p>
+<ul>
+<li><p>慢开始(指数增长)+拥塞避免(加法增长)</p>
+<p><img src="/2020/12/10/HTTP/20180819223210498" alt="img"></p>
+</li>
+<li><p>快重传+快恢复</p>
+<ul>
+<li><p>快重传机制：一旦发送方一连收到了三个M2的重复确认就应当立即重传M3</p>
+<p><img src="/2020/12/10/HTTP/20180819223158244" alt="img"></p>
+</li>
+<li><p>快重传+快恢复：如果网络出现拥塞的话就不会收到好几个重复的确认，所以认为此时网络不拥堵，不必执行慢开始，而是将拥塞窗口设置为门限的大小，然后执行拥塞避免算法</p>
+<p><img src="/2020/12/10/HTTP/20180819223226817" alt="img"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="5-ARQ协议"><a href="#5-ARQ协议" class="headerlink" title="5. ARQ协议"></a>5. ARQ协议</h1><ul>
+<li><strong>自动重传请求</strong>（Automatic Repeat-reQuest，ARQ）是为了实现信息的可靠传输，包括停止等待ARQ协议和连续ARQ协议<ul>
+<li>停止等待协议：该协议就是发送方发送完一个分组后就停止发送，等待接收端的ACK确认，确认了再继续发送，如果没收到，就会重新发送。缺点就是信道利用率低，等待时间长</li>
+<li>连续ARQ协议：发送方维护一个发送窗口，位于窗口内的数据都可以发送出去而不需要等待对方的确认，接收方的确认采用累积确认，即对<strong>按序</strong>到达的最后一个分组发送确认，表明这个分组之前的数据都接收到了。如果中间出现了分组丢失，接收方会丢弃不按序的分组，发送方需要重新发送。</li>
+</ul>
+</li>
+</ul>
+<h1 id="6-TCP保证可靠传输的方式"><a href="#6-TCP保证可靠传输的方式" class="headerlink" title="6. TCP保证可靠传输的方式"></a>6. TCP保证可靠传输的方式</h1><ul>
+<li>上述几种都是保证可靠传输的方法：流量控制、拥塞控制、ARQ协议、超时重传，还有校验和</li>
+<li>另外接收端会丢弃重复的数据。</li>
+</ul>
+<h1 id="7-DNS"><a href="#7-DNS" class="headerlink" title="7. DNS"></a>7. DNS</h1><h1 id="8-各种协议与HTTP协议的关系"><a href="#8-各种协议与HTTP协议的关系" class="headerlink" title="8. 各种协议与HTTP协议的关系"></a>8. 各种协议与HTTP协议的关系</h1><img src="/2020/12/10/HTTP/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f323031392f372f254535253930253834254537254137253844254535253844253846254538254145254145254534254238253845485454.png" style="zoom: 67%;">
+
+<h1 id="9-HTTP状态码"><a href="#9-HTTP状态码" class="headerlink" title="9. HTTP状态码"></a>9. HTTP状态码</h1><p>​    1**：代表请求已被接受</p>
+<p>​    2**：代表请求已被服务器接收</p>
+<p>​    3**：表示需要重定向</p>
+<p>​    4**：请求错误：比如找不到指定资源</p>
+<p>​    5**：服务器错误：后端代码写错了</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/12/10/HTTP/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MS-Redis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -437,6 +593,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
