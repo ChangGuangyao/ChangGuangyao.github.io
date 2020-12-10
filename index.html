@@ -188,11 +188,13 @@
 <li><strong>注意</strong>：要保持数据库和缓存中的数据的一致性，如果数据库中的对应数据改变之后，同步改变缓存中相应的数据即可</li>
 </ul>
 <h1 id="4-Redis常见的数据结构"><a href="#4-Redis常见的数据结构" class="headerlink" title="4. Redis常见的数据结构"></a>4. Redis常见的数据结构</h1><ul>
-<li>string：简单的key-value类型</li>
-</ul>
-<ul>
-<li><pre><code>set key value
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">* list：链表，Redis的list的实现为一个双向链表</span><br><span class="line"></span><br><span class="line">* hash：是一个string类型的field和value的映射表，特别适合用于存储对象</span><br><span class="line"></span><br><span class="line">  * ~~~</span><br><span class="line">    hset user name &quot;zhangsan&quot; age &quot;24&quot; gender &quot;1&quot;</span><br></pre></td></tr></table></figure></code></pre>
+<li><p>string：简单的key-value类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set key value</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>list：链表，Redis的list的实现为一个双向链表</p>
+</li>
+<li><p>hash：是一个string类型的field和value的映射表，特别适合用于存储对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hset user name &quot;zhangsan&quot; age &quot;24&quot; gender &quot;1&quot;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>set：类似于HashSet</p>
 </li>
@@ -276,7 +278,7 @@
 <li><p>如下场景：同时有一个请求A进行更新操作，另一个请求B进行查询操作。<br>（1）请求A进行写操作，删除缓存<br>（2）请求B查询发现缓存不存在<br>（3）请求B去数据库查询得到旧值<br>（4）请求B将旧值写入缓存<br>（5）请求A将新值写入数据库</p>
 <p>这样便出现了数据不一致问题，导致之后读的都是脏数据。采用延时双删策略得以解决</p>
 </li>
-<li><p>延时双删1：</p>
+<li><p>延时双删：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(String key,Object data)</span></span>&#123;</span><br><span class="line">    redisUtils.del(key);<span class="comment">//先删除缓存中的数据</span></span><br><span class="line">    db.update(data);<span class="comment">//更新数据库</span></span><br><span class="line">    Thread.Sleep(<span class="number">100</span>);<span class="comment">//延时</span></span><br><span class="line">    redisUtils.del(key);<span class="comment">//再删除一次缓存</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
