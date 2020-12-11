@@ -6,28 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>HTTP | Hexo</title>
+  <title>MS_并发编程 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. TCP&#x2F;IP的分层管理 TCP&#x2F;IP一共划分为四层：应用层、传输层、网络层和数据链路层，不同的层次有不同的任务  应用层：应用层的任务是通过应用进程间的交互来完成特定网络应用  传输层：传输层的任务是负责向两台主机进程之间的通信提供通用的数据传输服务。传输层主要使用以下两种协议  传输控制协议TCP：面向连接的，可靠的数据传输服务 用户数据协议UDP：无连接的，尽最大努力交付的数据传输服务，">
+  <meta name="description" content="1. Synchronized 用过吗，其原理是什么？ &#x3D;&#x3D;Synchronized&#x3D;&#x3D;是由JVM实现的一种实现互斥同步的一种方式。被&#x3D;&#x3D;Synchronized&#x3D;&#x3D;修饰过的程序块，在编译前后被编译器生成了monitor enter和monitor exit两个字节码指令。 在虚拟机执行到 monitor enter 指令时，首先要尝试获取对象的锁： 如果这个对象没有锁定，或者当前线程已经拥有了这">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP">
-<meta property="og:url" content="http://example.com/2020/12/10/HTTP/index.html">
+<meta property="og:title" content="MS_并发编程">
+<meta property="og:url" content="http://example.com/2020/12/11/MS-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1. TCP&#x2F;IP的分层管理 TCP&#x2F;IP一共划分为四层：应用层、传输层、网络层和数据链路层，不同的层次有不同的任务  应用层：应用层的任务是通过应用进程间的交互来完成特定网络应用  传输层：传输层的任务是负责向两台主机进程之间的通信提供通用的数据传输服务。传输层主要使用以下两种协议  传输控制协议TCP：面向连接的，可靠的数据传输服务 用户数据协议UDP：无连接的，尽最大努力交付的数据传输服务，">
+<meta property="og:description" content="1. Synchronized 用过吗，其原理是什么？ &#x3D;&#x3D;Synchronized&#x3D;&#x3D;是由JVM实现的一种实现互斥同步的一种方式。被&#x3D;&#x3D;Synchronized&#x3D;&#x3D;修饰过的程序块，在编译前后被编译器生成了monitor enter和monitor exit两个字节码指令。 在虚拟机执行到 monitor enter 指令时，首先要尝试获取对象的锁： 如果这个对象没有锁定，或者当前线程已经拥有了这">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2020/12/10/HTTP/image-20201210153054521.png">
-<meta property="og:image" content="http://example.com/2020/12/10/HTTP/image-20201210154402416.png">
-<meta property="og:image" content="http://example.com/2020/12/10/HTTP/image-20201210160855268.png">
-<meta property="og:image" content="http://example.com/2020/12/10/HTTP/20180819223210498">
-<meta property="og:image" content="http://example.com/2020/12/10/HTTP/20180819223158244">
-<meta property="og:image" content="http://example.com/2020/12/10/HTTP/20180819223226817">
-<meta property="og:image" content="http://example.com/2020/12/10/HTTP/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f323031392f372f254535253930253834254537254137253844254535253844253846254538254145254145254534254238253845485454.png">
-<meta property="article:published_time" content="2020-12-10T07:05:20.000Z">
-<meta property="article:modified_time" content="2020-12-10T09:04:46.364Z">
+<meta property="article:published_time" content="2020-12-11T11:10:08.000Z">
+<meta property="article:modified_time" content="2020-12-11T11:10:40.015Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="HTTP">
+<meta property="article:tag" content="MS_并发编程">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2020/12/10/HTTP/image-20201210153054521.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -163,109 +155,309 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-HTTP" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-MS-并发编程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      HTTP
+      MS_并发编程
     </h1>
   
 
         
-        <a href="/2020/12/10/HTTP/" class="archive-article-date">
-  	<time datetime="2020-12-10T07:05:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-10</time>
+        <a href="/2020/12/11/MS-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2020-12-11T11:10:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-TCP-IP的分层管理"><a href="#1-TCP-IP的分层管理" class="headerlink" title="1. TCP/IP的分层管理"></a>1. TCP/IP的分层管理</h1><ul>
-<li><p>TCP/IP一共划分为四层：<strong>应用层、传输层、网络层和数据链路层</strong>，不同的层次有不同的任务</p>
+        <h1 id="1-Synchronized-用过吗，其原理是什么？"><a href="#1-Synchronized-用过吗，其原理是什么？" class="headerlink" title="1. Synchronized 用过吗，其原理是什么？"></a>1. Synchronized 用过吗，其原理是什么？</h1><ul>
+<li>==Synchronized==是由JVM实现的一种实现互斥同步的一种方式。被==Synchronized==修饰过的程序块，在编译前后被编译器生成了monitor enter和monitor exit两个字节码指令。<ul>
+<li>在虚拟机执行到 monitor enter 指令时，首先要尝试获取对象的锁：</li>
+<li>如果这个对象没有锁定，或者当前线程已经拥有了这个对象的锁，把锁的计数器 +1；</li>
+<li>当执行 monitor exit 指令时将锁计数器 -1；</li>
+<li>当计数器为 0 时，锁就被释放了。</li>
+<li>如果获取对象失败了，那当前线程就要阻塞等待，直到对象锁被另外一个线程释放为止。</li>
+</ul>
+</li>
+</ul>
+<h1 id="2-获取对象的锁，这个“锁”到底是什么？如何确定对象的锁？"><a href="#2-获取对象的锁，这个“锁”到底是什么？如何确定对象的锁？" class="headerlink" title="2. 获取对象的锁，这个“锁”到底是什么？如何确定对象的锁？"></a>2. 获取对象的锁，这个“锁”到底是什么？如何确定对象的锁？</h1><ul>
+<li><p>“锁”的本质其实是 monitor enter 和 monitor exit 字节码指令的一个 Reference 类型的参数，即要锁定和解锁的对象。我们知道，使用 Synchronized 可以修饰不同的对象，因此，对应的对象锁可以这样确定。</p>
+<ol>
+<li><p>如果 Synchronized 明确指定了锁对象，比如 Synchronized（变量名）、Synchronized(this) 等，说明加解锁对象为该对象。</p>
+</li>
+<li><p>如果没有明确指定：</p>
 <ul>
-<li><p>应用层：应用层的任务是通过应用进程间的交互来完成特定网络应用</p>
+<li><p>若 Synchronized 修饰的方法为非静态方法，表示此方法对应的对象为锁对象；</p>
 </li>
-<li><p>传输层：传输层的任务是负责向两台主机进程之间的通信提供通用的数据传输服务。传输层主要使用以下两种协议</p>
-<ul>
-<li>传输控制协议TCP：面向连接的，可靠的数据传输服务</li>
-<li>用户数据协议UDP：无连接的，尽最大努力交付的数据传输服务，不可靠</li>
-</ul>
-</li>
-<li><p>网络层：网络层的任务是选择合适的网间路由和交换节点，确保数据及时传送</p>
-</li>
-<li><p>数据链路层：用来处理连接网络的硬件部分。包括硬件设备驱动、网络适配器等</p>
-<img src="/2020/12/10/HTTP/image-20201210153054521.png" alt="image-20201210153054521" style="zoom:50%;">
-
-<ul>
-<li>发送端在层与层之间传输数据时，每经过一层时都会被打上一个该层的首部信息，接收端在层与层之间传输数据时，每经过一层时都会把对应的首部消去</li>
-</ul>
+<li><p>若 Synchronized 修饰的方法为静态方法，则表示此方法对应的类对象为锁对象注意，</p>
 </li>
 </ul>
-</li>
-</ul>
-<h1 id="2-TCP连接的建立-三次握手"><a href="#2-TCP连接的建立-三次握手" class="headerlink" title="2. TCP连接的建立(三次握手)"></a>2. TCP连接的建立(三次握手)</h1><ol>
-<li><p>发送端首先发送一个带SYN标志的数据包给对方。</p>
-</li>
-<li><p>接收端收到后，回传一个带有SYN/ACK标志的数据包以表示传达确认信息</p>
-</li>
-<li><p>发送端再回传一个带有ACK标志的数据包，代表握手结束</p>
-<p><img src="/2020/12/10/HTTP/image-20201210154402416.png" alt="image-20201210154402416"></p>
 </li>
 </ol>
-<h1 id="3-TCP连接的释放-四次挥手"><a href="#3-TCP连接的释放-四次挥手" class="headerlink" title="3. TCP连接的释放(四次挥手)"></a>3. TCP连接的释放(四次挥手)</h1><ol>
-<li><p>客户端发送一个连接释放报文(报文首部FIN=1)，用来关闭客户端到服务器的数据传送</p>
 </li>
-<li><p>服务器收到FIN，发回一个ACK，确认序号为收到的序号+1。此时服务器端处于半关闭状态，可以继续向客户端发送数据，客户端也必须接受</p>
+<li><p>当一个对象被锁住时，对象里面所有用 Synchronized 修饰的方法都将产生堵塞，而对象里非 Synchronized 修饰的方法可正常被调用，不受锁影响。</p>
 </li>
-<li><p>服务器关闭与客户端的连接，发送一个FIN给客户端</p>
+</ul>
+<h1 id="3-什么是可重入性，为什么说-Synchronized-是可重入锁？"><a href="#3-什么是可重入性，为什么说-Synchronized-是可重入锁？" class="headerlink" title="3. 什么是可重入性，为什么说 Synchronized 是可重入锁？"></a>3. 什么是可重入性，为什么说 Synchronized 是可重入锁？</h1><ul>
+<li><p>可重入性是锁的一个基本要求，是为了解决自己锁死自己的情况。</p>
 </li>
-<li><p>客户端发回ACK报文确认。服务器只要收到了客户端发出的确认，会立即进入关闭状态。</p>
-<img src="/2020/12/10/HTTP/image-20201210160855268.png" alt="image-20201210160855268" style="zoom:80%;">
+<li><p>比如下面的伪代码，一个类中的同步方法调用另一个同步方法，假如 Synchronized 不支持重入，进入 method2 方法时当前线程获得锁，method2 方法里面执行 method1 时当前线程又要去尝试获取锁，这时如果不支持重入，它就要等释放，把自己阻塞，导致自己锁死自己。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Deadlock</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.method1();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Deadlock deadlock=<span class="keyword">new</span> Deadlock();</span><br><span class="line">        deadlock.method2();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
+<h1 id="4-为什么说-Synchronized-是非公平锁"><a href="#4-为什么说-Synchronized-是非公平锁" class="headerlink" title="4. 为什么说 Synchronized 是非公平锁?"></a>4. 为什么说 Synchronized 是非公平锁?</h1><ul>
+<li>公平锁<ul>
+<li>在获取不到锁的时候，会自动加入队列，等待线程释放锁后，队列的第一个线程获取锁</li>
+</ul>
+</li>
+<li>非公平锁<ul>
+<li>在获取不到锁的时候，会自动加入队列，等待线程释放锁后，所有等待的线程去竞争</li>
+</ul>
+</li>
+<li>公平锁和非公平锁的区别主要体现在获取锁的行为上</li>
+<li>目的：<ul>
+<li>Synchronized 设置为非公平锁，这样做的目的是为了提高执行性能，缺点是可能会产生线程饥饿现象</li>
+</ul>
+</li>
+</ul>
+<h1 id="5-什么是锁粗化和锁消除？"><a href="#5-什么是锁粗化和锁消除？" class="headerlink" title="5. 什么是锁粗化和锁消除？"></a>5. 什么是锁粗化和锁消除？</h1><ul>
+<li><p>锁粗化：</p>
+<ul>
+<li>通常情况下，为了保证多线程间的有效并发，会要求每个线程持有锁的时间尽可能短，但是在某些情况下，一个程序对同一个锁不间断、高频的请求、同步与释放，会消耗掉一定的系统资源，因为锁的请求、同步与释放本身会带来性能损耗，这样高频的锁请求反而不利于并发。锁粗化就是将多次锁的请求合并成一个请求，以降低短时间内大量锁请求、同步和释放带来的性能损耗</li>
+</ul>
+</li>
+<li><p>锁消除</p>
+<ul>
+<li><p>出现的时机：虚拟机编译期</p>
+</li>
+<li><p>出现的原因：主要判断依据就是来源于逃逸分析的数据支持，堆上的所有数据都不会逃逸出去从而被其他线程访问到，那就可以把它当做栈上的数据对待，认为它们是线程私有，同步锁无须进行。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">concatString</span><span class="params">(String s1, String s2, String s3)</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">return</span> s1 + s2 + s3;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">concatString</span><span class="params">(String s1, String s2, String s3)</span> </span>&#123;  </span><br><span class="line">    StringBuffer sb = <span class="keyword">new</span> StringBuffer();  </span><br><span class="line">    sb.append(s1);  </span><br><span class="line">    sb.append(s2);  </span><br><span class="line">    sb.append(s3);  </span><br><span class="line">    <span class="keyword">return</span> sb.toString();  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>本身对于String的连接操作JVM会转换为StringBuffer进行连接，既然转化成了sb，那么其实sb是一个局部变量，对于append操作加锁并没有任何效果，因为其它线程在外部是访问不到它的，就可以进行锁的消除</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="6-为什么说-Synchronized-是一个悲观锁？乐观锁的实现原理又是什么？什么是-CAS，它有什么特性？"><a href="#6-为什么说-Synchronized-是一个悲观锁？乐观锁的实现原理又是什么？什么是-CAS，它有什么特性？" class="headerlink" title="6. 为什么说 Synchronized 是一个悲观锁？乐观锁的实现原理又是什么？什么是 CAS，它有什么特性？"></a>6. 为什么说 Synchronized 是一个悲观锁？乐观锁的实现原理又是什么？什么是 CAS，它有什么特性？</h1><ul>
+<li><p>Synchronized 是一个悲观锁，因为它的开发策略就是悲观的：</p>
+<ul>
+<li>不管是否会产生竞争，任何的数据操作都必须要加锁</li>
+</ul>
+</li>
+<li><p>乐观锁的实现原理是==CAS(Compare And Swap)==</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">compareAndSwapLong</span><span class="params">(Object obj,<span class="keyword">long</span> valueOffset,<span class="keyword">long</span> expect, <span class="keyword">long</span> update）</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>该方法中有四个参数，分别为对象内存位置、对象中变量的偏移量、变量预期值和新的值。</li>
+<li>其操作含义是：如果对象obj中内存偏移量为valueOffset的变量值为expect，则使用新的值update替换旧的值expect。</li>
+</ul>
+</li>
+<li><p>CAS具有原子性，它的原子由CPU硬件指令实现保证，JDK中提供了Unsafe类执行这些操作</p>
+</li>
+</ul>
+<h1 id="7-乐观锁一定就是好的吗？"><a href="#7-乐观锁一定就是好的吗？" class="headerlink" title="7. 乐观锁一定就是好的吗？"></a>7. 乐观锁一定就是好的吗？</h1><ul>
+<li>只能保证一个共享变量的原子操作 CAS只对单个共享变量有效，当操作涉及跨多个共享变量时CAS无效。 但是从 JDK 1.5开始，提供了AtomicReference类来保证引用对象之间的原子性， 可以把多个变量封装成对象里来进行 CAS 操作. 所以我们可以使用锁或者利用AtomicReference类把多个共享变量封装成一个共享变量来操作。</li>
+<li>长时间自旋可能导致开销大。假如 CAS 长时间不成功而一直自旋，会给 CPU 带来很大的开销</li>
+<li>ABA 问题。CAS 的核心思想是通过比对内存值与预期值是否一样而判断内存值是否被改过，但这个判断逻辑不严谨，假如内存值原来是 A，后来被一条线程改为 B，最后又被改成了 A，则 CAS 认为此内存值并没有发生改变，但实际上是有被其他线程改过的，这种情况对依赖过程值的情景的运算结果影响很大。解决的思路是引入版本号，每次变量更新都把版本号加一</li>
+</ul>
+<h1 id="8-跟-Synchronized-相比，可重入锁-ReentrantLock-其实现原理有什么不同？"><a href="#8-跟-Synchronized-相比，可重入锁-ReentrantLock-其实现原理有什么不同？" class="headerlink" title="8. 跟 Synchronized 相比，可重入锁 ReentrantLock 其实现原理有什么不同？"></a>8. 跟 Synchronized 相比，可重入锁 ReentrantLock 其实现原理有什么不同？</h1><ul>
+<li>其实，锁的实现原理基本是为了达到一个目的：让所以的线程都能看到某种标记。Synchronized 通过在对象头设置标记实现这一目的，是一种 JVM 原生的锁实现方式，而 ReentrantLock 以及所有的基于 Lock 接口的实现类，都是通过一个 Volitile 修饰的 int 变量，并保证每个线程都能拥有对该 int 的可见性和原子修改，其本质是基于所谓的 AQS 框架。</li>
+<li>实现方式的不同<ul>
+<li>==Synchronized==是依赖于JVM实现的，而==ReenTrantLock==是JDK实现的，有什么区别，说白了就类似于操作系统来控制实现和用户自己敲代码实现的区别。前者的实现是比较难见到的，后者有直接的源码可供阅读。</li>
+</ul>
+</li>
+<li>便利性：很明显Synchronized的使用比较方便简洁，并且由编译器去保证锁的加锁和释放，而ReenTrantLock需要手工声明来加锁和释放锁，为了避免忘记手工释放锁造成死锁，所以最好在finally中声明释放锁。</li>
+<li>ReenTrantLock独有的能力：<ul>
+<li>==ReenTrantLock==可以指定是公平锁还是非公平锁。而==synchronized==只能是非公平锁。所谓的公平锁就是先等待的线程先获得锁</li>
+<li>ReenTrantLock提供了一个Condition（条件）类，用来实现分组唤醒需要唤醒的线程们，而不是像synchronized要么随机唤醒一个线程要么唤醒全部线程</li>
+<li>ReenTrantLock提供了一种能够中断等待锁的线程的机制，通过lock.lockInterruptibly()来实现这个机制</li>
+</ul>
+</li>
+<li>ReenTrantLock的实现原理：<ul>
+<li>简单来说，ReenTrantLock的实现是一种自旋锁，通过循环调用CAS操作来实现加锁。</li>
+</ul>
+</li>
+</ul>
+<h1 id="9-AQS-框架是怎么回事儿？"><a href="#9-AQS-框架是怎么回事儿？" class="headerlink" title="9.  AQS 框架是怎么回事儿？"></a>9.  AQS 框架是怎么回事儿？</h1><ul>
+<li>AQS 是一个用来构建锁和同步器的框架，各种 Lock 包中的锁（常用的有ReentrantLock、ReadWriteLock），以及其他如 Semaphore、CountDownLatch，甚至是早期的 FutureTask 等，都是基于 AQS 来构建<ul>
+<li>AQS 在内部定义了一个 volatile int state 变量，表示同步状态：当线程调用 lock 方法时，如果 state = 0，说明没有任何线程占用共资源的锁，可以获得锁并将 state = 1；如果 state = 1，则说明有线程目前正在使用共享变量，其他线程必须加入同步队列进行等待</li>
+<li>AQS 通过 Node 内部类构成的一个双向链表结构的同步队列，来完成线程获取锁的排队工作，当有线程获取锁失败后，就被添加到队列末尾<ul>
+<li>Node 类是对要访问同步代码的线程的封装，包含了线程本身及其状态叫 waitStatus（有五种不同 取值，分别表示是否被阻塞，是否等待唤醒，是否已经被取消等），每个 Node 结点关联其 prev 结点和 next 结点，方便线程释放锁后快速唤醒下一个在等待的线程，是一个 FIFO 的过程</li>
+<li>Node 类有两个变量，SHARED 和 EXCLUSIVE，分贝代表共享模式和独占模式。所谓共享模式是一个锁允许多条线程同时操作（信号量 Semaphore 就是基于 AQS 的共享模式实现的），独占模式是同一个时间段只能有一个线程对共享资源进行操作，多余的请求线程需要排队等待（ReentranLock）</li>
+</ul>
+</li>
+<li>AQS 通过内部类 Condition Object 构建等待队列（可有多个），当 Condition 调用 wait() 方法后，线程将会加入等待队列中，而当 Condition 调用 signal() 方法后，线程将从等待队列转移到同步队列中进行锁竞争</li>
+<li>AQS 和 Condition 各自维护了不同的队列，在使用Lock 和 Condition 的时候，其实就是两个队列的互相移动</li>
+</ul>
+</li>
+</ul>
+<h1 id="10-请尽可能详尽地对比下-Synchronized-和-ReentrantLock-的异同？"><a href="#10-请尽可能详尽地对比下-Synchronized-和-ReentrantLock-的异同？" class="headerlink" title="10. 请尽可能详尽地对比下 Synchronized 和 ReentrantLock 的异同？"></a>10. 请尽可能详尽地对比下 Synchronized 和 ReentrantLock 的异同？</h1><ul>
+<li>ReentrantLock 是 Lock 的实现类，是一个互斥的同步锁。从功能角度，ReentrantLock 比 Synchronized 的同步操作更精细（因为可以像普通对象一样使用），甚至实现 Synchronized 没有的高级功能，如：<ul>
+<li>等待可中断：当持有锁的线程长期不释放锁的时候，正在等待的线程可以选择放弃等待，对处理执行非常长的同步块很有用</li>
+<li>带超时的获取锁尝试：在指定的时间范围内获取锁，如果时间到了仍然无法获取则返回</li>
+<li>可以判断是否有线程在排队等待获取锁</li>
+<li>可以响应中断请求：与 Synchronized 不同，当获取锁的线程被中断时，能够响应中断，中断异常将会被抛出，同时锁会被释放</li>
+<li>可以实现公平锁</li>
+</ul>
+</li>
+<li>从锁释放角度<ul>
+<li>Synchronized 在 JVM 层面上实现的，不但可以通过一些监控工具监控 Synchronized 的锁定，而且在代码执行出现异常时，JVM 会自动释放锁</li>
+<li>但是使用 Lock 则不行，Lock 是通过代码实现的，要保证锁定一定会被释放，就必须将 unLock() 放到 finally{} 中</li>
+</ul>
+</li>
+<li>从性能角度<ul>
+<li>Synchronized 早期实现比较低小，对比 ReentrantLock ，大多数场景性能都相差较大。</li>
+<li>但是在 Java 6 中对其进行了非常多的改进，在竞争不激烈时，Synchronized 的性能要优于 ReentrantLock；</li>
+<li>在高竞争情况下，Synchronized 的性能会下降几十倍，但是 ReentrantLock 的性能能维持常态</li>
+</ul>
+</li>
+</ul>
+<h1 id="11-ReentrantLock-是如何实现可重入性的？"><a href="#11-ReentrantLock-是如何实现可重入性的？" class="headerlink" title="11. ReentrantLock 是如何实现可重入性的？"></a>11. ReentrantLock 是如何实现可重入性的？</h1><ul>
+<li>ReentrantLock 内部自定义了同步器 Sync，其实就是加锁的时候通过 CAS 算法，将线程对象放到一个双向链表中，每次获取锁的时候，看下当前维护的这个线程 ID 和当前请求的线程 ID 是否一样，一样就可以重入了，并且state+1，释放时state-1</li>
+</ul>
+<h1 id="12-请谈谈-ReadWriteLock-和-StampedLock"><a href="#12-请谈谈-ReadWriteLock-和-StampedLock" class="headerlink" title="12. 请谈谈 ReadWriteLock 和 StampedLock"></a>12. 请谈谈 ReadWriteLock 和 StampedLock</h1><ul>
+<li>虽然 ReentrantLock 和 Synchronized 简单实用，但是行为上有一定局限性，要么不占，要么独占</li>
+<li>实际应用中，有时候不需要大量竞争的写操作，而是以并发读取为主，为了进一步优化并发操作的粒度，Java 提供了读写锁。</li>
+<li>读写锁基于的原理是多个读操作不需要互斥，如果读锁试图锁定时，写锁是被某个线程持有，读锁将无法获得，而只好等待对方操作结束，这样就可以自己保证不会读取到有争议的数据。</li>
+<li>ReadWriteLock 代表了一对锁，当数据量较大，读多写少的时候，能够比纯同步凸显出优势</li>
+<li>StampedLock，在提供类似读写锁的同时，还支持优化读模式。优化读模式基于假设，大多数情况下读操作并不会和写操作冲突，其逻辑是先试着修改，然后通过 validate 方法确认是否进入了写模式，如果没有进入，就成功避免了开销；如果进入，则尝试获取锁</li>
+</ul>
+<h1 id="13-Java-中的线程池是如何实现的？"><a href="#13-Java-中的线程池是如何实现的？" class="headerlink" title="13. Java 中的线程池是如何实现的？"></a>13. Java 中的线程池是如何实现的？</h1><ul>
+<li><p>Java线程池主要是由一个线程集合（核心线程）和一个阻塞队列构成。</p>
+</li>
+<li><p>当用户向线程池提交一个任务时，线程池会先将任务放入队列中，线程集合（核心线程）会不断地从队列中获取线程并执行，当队列中没有线程时，线程集合会阻塞，直到队列中有新任务</p>
+</li>
+<li><p>线程池的几个主要参数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> ThreadPoolExecutor（</span><br><span class="line">  <span class="keyword">int</span> corePoolSize,<span class="comment">//最大核心线程数</span></span><br><span class="line">  <span class="keyword">int</span> maximumPoolSize,<span class="comment">//线程池里允许有的最大线程数量</span></span><br><span class="line">  <span class="keyword">long</span> keepAliveTime,<span class="comment">//空闲线程存活时间</span></span><br><span class="line">  TimeUnit unit,<span class="comment">//keepAliveTime的时间单位，比如分钟、小时等</span></span><br><span class="line">  BlockingQueue&lt;Runnable&gt; workQueue,<span class="comment">//缓冲队列</span></span><br><span class="line">  ThreadFactory threadFactory,<span class="comment">//创建线程的工厂</span></span><br><span class="line">  RejectedExecutionHandler handler)<span class="comment">//线程池拒绝任务的处理策略，比如抛出异常等</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>执行流程<ol>
+<li>当提交一个新的任务时，判断当前运行的任务数是否达到了corePoolSize，如果没超过，则可以执行该任务</li>
+<li>如果超过了corePoolSize，就把该任务加入阻塞队列，如果队列满了，就加入到maximumPoolSize中，并创建新线程（非核心线程）执行任务</li>
+<li>如果maximumPoolSize也满了，就根据RejectedExecutionHandler来拒绝这个任务的提交</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>Java线程池的使用规范：</p>
+<ul>
+<li>【强制】线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险。 <ul>
+<li>说明：Executors 返回的线程池对象的弊端如下：<ol>
+<li>FixedThreadPool 和 SingleThreadPool：允许的请求队列（workQueue）长度为 Integer.MAX_VALUE，可能会堆积大量的请求，从而导致 OOM。<ul>
+<li>这两种线程池的阻塞队列用LinkedBlockingQueue实现，可以一直增大</li>
+</ul>
+</li>
+<li> CachedThreadPool：允许的创建线程（maximumPoolSize）数量为 Integer.MAX_VALUE，可能会创建大量的线程，从而导致 OOM。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>说白了，使用Executors类创建线程池与使用ThreadPoolExecutor类的区别就是使用ThreadPoolExecutor类可以自定义传入我们设置的线程池的参数，更加灵活</li>
+</ul>
+</li>
+</ul>
+<h1 id="14-线程池中的线程是怎么创建的？是一开始就随着线程池的启动创建好的吗？"><a href="#14-线程池中的线程是怎么创建的？是一开始就随着线程池的启动创建好的吗？" class="headerlink" title="14. 线程池中的线程是怎么创建的？是一开始就随着线程池的启动创建好的吗？"></a>14. 线程池中的线程是怎么创建的？是一开始就随着线程池的启动创建好的吗？</h1><ul>
+<li>显然不是的。线程池默认初始化后不启动 Worker，等待有请求时才启动。</li>
+<li>每当我们调用 execute() 方法添加一个任务时，线程池会做如下判断：<ul>
+<li>如果正在运行的线程数量小于 corePoolSize，那么马上创建线程运行这个任务</li>
+<li>如果正在运行的线程数量大于或等于 corePoolSize，那么将这个任务放入队列</li>
+<li>如果这时候队列满了，而且正在运行的线程数量小于 maximumPoolSize，那么还是要创建非核心线程立刻运行这个任务</li>
+<li>如果队列满了，而且正在运行的线程数量大于或等于 maximumPoolSize，那么线程池会抛出异常 RejectExecutionException</li>
+</ul>
+</li>
+<li>当一个线程完成任务时，它会从队列中取下一个任务来执行。</li>
+<li>当一个线程无事可做，超过一定的时间（keepAliveTime）时，线程池会判断：<ul>
+<li>如果当前运行的线程数大于 corePoolSize，那么这个线程就被停掉。所以线程池的所有任务完成后，它最终会收缩到 corePoolSize 的大小（前提是默认核心线程不会被销毁）</li>
+</ul>
+</li>
+<li>线程池期望并发效果能够达到corePoolSize ，如果负载过大，可以并发到corePoolSize ~maximumPoolSize之间的程度</li>
+</ul>
+<h1 id="15-既然提到可以通过配置不同参数创建出不同的线程池，那么-Java-中默认实现好的线程池又有哪些呢？请比较它们的异同"><a href="#15-既然提到可以通过配置不同参数创建出不同的线程池，那么-Java-中默认实现好的线程池又有哪些呢？请比较它们的异同" class="headerlink" title="15. 既然提到可以通过配置不同参数创建出不同的线程池，那么 Java 中默认实现好的线程池又有哪些呢？请比较它们的异同"></a>15. 既然提到可以通过配置不同参数创建出不同的线程池，那么 Java 中默认实现好的线程池又有哪些呢？请比较它们的异同</h1><ol>
+<li>==<strong>SingleThreadExecutor</strong>==线程池：这个线程池只有一个核心线程在工作，也就是相当于单线程串行执行所有任务。如果这个唯一的线程因为异常结束，那么会有一个新的线程来替代它。此线程保证所有任务的执行顺序按照任务的提交顺序执行<ul>
+<li>corePoolSize：1，只有一个核心线程在工作</li>
+<li>maximumPoolSize：1</li>
+<li>keepAliveTime：0L</li>
+<li>workQueue：new LinkedBlockingQueue<Runnable>()，其缓冲队列是无界的</Runnable></li>
+</ul>
+</li>
+<li>==<strong>FixedThreadPool</strong>==线程池：这个线程池是固定大小的线程池，只有核心线程池。每次提交一个任务就创建一个线程，直到线程达到线程池的最大大小。线程池的大小一旦达到最大值就会保持不变，如果某个线程因为执行异常而结束，那么线程池会补充一个新线程。==FixedThreadPool多数针对一些很稳定很固定的正规并发线程，多用于服务器。==<ul>
+<li>corePoolSize：nThreads</li>
+<li>maximumPoolSize：nThreads</li>
+<li>keepAliveTime：0L</li>
+<li>workQueue：new LinkedBlockingQueue<Runnable>()，其缓冲队列是无界的</Runnable></li>
+</ul>
+</li>
+<li>**==CachedThreadPool==**线程池：这个线程池是无界的，如果线程池的大小超过了处理任务所需要的线程，那么就会回收部分空闲（60秒不执行任务）线程，当任务数增加时，此线程池又可以智能地添加新线程来处理任务。SynchronousQueue是一个缓冲区为1的阻塞队列。缓存型池子通常用于执行一些生存期很短的异步型任务，因此在一些面向连接的 daemon 型 SERVER 中用得不多。但对于生存期短的异步任务，它是 Executor 的首选。<ul>
+<li>corePoolSize：0</li>
+<li>maximumPoolSize：Integer.MAX_VALUE</li>
+<li>keepAliveTime：60L</li>
+<li>workQueue：new SynchronousQueue<Runnable>()，是一个缓冲区为1的阻塞队列</Runnable></li>
+</ul>
+</li>
+<li>==<strong>ScheduledThreadPool</strong>==线程池：核心线程池固定，大小无限的线程池。此线程池支持定时以及周期性执行任务的需求。创建一个周期性执行任务的线程池，如果闲置，非核心线程池会在DEFAULT_KEEPALIVEMILLIS时间内回收。<ul>
+<li>corePoolSize：corePoolSize</li>
+<li>maximumPoolSize：Integer.MAX_VALUE</li>
+<li>keepAliveTime：DEFAULT_KEEPALIVE_MILLIS</li>
+<li>workQueue：new DelayedWorkQueue()，DelayedWorkQueue 是一个无界队列, 基于数组实现, 队列的长度可以扩容到 Integer.MAX_VALUE</li>
+</ul>
 </li>
 </ol>
-<h1 id="4-流量控制和拥塞控制"><a href="#4-流量控制和拥塞控制" class="headerlink" title="4. 流量控制和拥塞控制"></a>4. 流量控制和拥塞控制</h1><ul>
-<li><p>流量控制：TCP的流量控制是利用滑动窗口机制实现的，接收方在返回的数据中会包含自己的接收窗口大小，以控制发送方的数据发送</p>
-</li>
-<li><p>拥塞控制：防止过多的数据注入到网络中</p>
+<h1 id="16-如何在-Java-线程池中提交线程？"><a href="#16-如何在-Java-线程池中提交线程？" class="headerlink" title="16. 如何在 Java 线程池中提交线程？"></a>16. 如何在 Java 线程池中提交线程？</h1><ul>
+<li><p>提交线程池的两种方法</p>
 <ul>
-<li><p>慢开始(指数增长)+拥塞避免(加法增长)</p>
-<p><img src="/2020/12/10/HTTP/20180819223210498" alt="img"></p>
+<li><p>execute()：ExecutorService.execute方法接收一个Runnable实例，用来执行一个任务</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExecutorService.execute(Runnable runnable);</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>快重传+快恢复</p>
-<ul>
-<li><p>快重传机制：一旦发送方一连收到了三个M2的重复确认就应当立即重传M3</p>
-<p><img src="/2020/12/10/HTTP/20180819223158244" alt="img"></p>
-</li>
-<li><p>快重传+快恢复：如果网络出现拥塞的话就不会收到好几个重复的确认，所以认为此时网络不拥堵，不必执行慢开始，而是将拥塞窗口设置为门限的大小，然后执行拥塞避免算法</p>
-<p><img src="/2020/12/10/HTTP/20180819223226817" alt="img"></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="5-ARQ协议"><a href="#5-ARQ协议" class="headerlink" title="5. ARQ协议"></a>5. ARQ协议</h1><ul>
-<li><strong>自动重传请求</strong>（Automatic Repeat-reQuest，ARQ）是为了实现信息的可靠传输，包括停止等待ARQ协议和连续ARQ协议<ul>
-<li>停止等待协议：该协议就是发送方发送完一个分组后就停止发送，等待接收端的ACK确认，确认了再继续发送，如果没收到，就会重新发送。缺点就是信道利用率低，等待时间长</li>
-<li>连续ARQ协议：发送方维护一个发送窗口，位于窗口内的数据都可以发送出去而不需要等待对方的确认，接收方的确认采用累积确认，即对<strong>按序</strong>到达的最后一个分组发送确认，表明这个分组之前的数据都接收到了。如果中间出现了分组丢失，接收方会丢弃不按序的分组，发送方需要重新发送。</li>
-</ul>
-</li>
-</ul>
-<h1 id="6-TCP保证可靠传输的方式"><a href="#6-TCP保证可靠传输的方式" class="headerlink" title="6. TCP保证可靠传输的方式"></a>6. TCP保证可靠传输的方式</h1><ul>
-<li>上述几种都是保证可靠传输的方法：流量控制、拥塞控制、ARQ协议、超时重传，还有校验和</li>
-<li>另外接收端会丢弃重复的数据。</li>
-</ul>
-<h1 id="7-DNS"><a href="#7-DNS" class="headerlink" title="7. DNS"></a>7. DNS</h1><h1 id="8-各种协议与HTTP协议的关系"><a href="#8-各种协议与HTTP协议的关系" class="headerlink" title="8. 各种协议与HTTP协议的关系"></a>8. 各种协议与HTTP协议的关系</h1><img src="/2020/12/10/HTTP/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f323031392f372f254535253930253834254537254137253844254535253844253846254538254145254145254534254238253845485454.png" style="zoom: 67%;">
+<li><p>submit()：ExecutorService.submit()方法返回的是Future对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FutureTask task=ExecutorService.submit(Runnable runnable);</span><br><span class="line">FutureTask&lt;T&gt; task=ExecutorService.submit(Runnable runnable,T Result);</span><br><span class="line">FutureTask&lt;T&gt; task=ExecutorService.submit(Callable&lt;T&gt; callable);</span><br></pre></td></tr></table></figure>
 
-<h1 id="9-HTTP状态码"><a href="#9-HTTP状态码" class="headerlink" title="9. HTTP状态码"></a>9. HTTP状态码</h1><p>​    1**：代表请求已被接受</p>
-<p>​    2**：代表请求已被服务器接收</p>
-<p>​    3**：表示需要重定向</p>
-<p>​    4**：请求错误：比如找不到指定资源</p>
-<p>​    5**：服务器错误：后端代码写错了</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="17-什么是-Java-的内存模型，Java-中各个线程是怎么彼此看到对方的变量的"><a href="#17-什么是-Java-的内存模型，Java-中各个线程是怎么彼此看到对方的变量的" class="headerlink" title="17. 什么是 Java 的内存模型，Java 中各个线程是怎么彼此看到对方的变量的?"></a>17. 什么是 Java 的内存模型，Java 中各个线程是怎么彼此看到对方的变量的?</h1><ul>
+<li>Java的内存模型定义了线程各个变量的访问规则，即在虚拟机中将变量存储到内存和从内存中取出这样的底层细节。<ul>
+<li>此处的变量包括实例字段、静态字段和构成数组对象的元素，但是不包括局部变量和方法参数，因为这些是线程私有的，不会被共享，所以不存在竞争问题。</li>
+</ul>
+</li>
+<li>所有的变量都存储在主内存，每个线程还有自己的工作内存，保证了被该线程使用到的变量的主内存副本拷贝<ul>
+<li>线程对变量的所有操作（读取、复制）都必须在工作内存中进行，不能直接读写主内存的变量。不同线程之间也无法直接访问对方工作内存的变量，线程间变量值的传递需要通过主内存。</li>
+</ul>
+</li>
+</ul>
+<h1 id="18-请谈谈-volatile-有什么特点，为什么它能保证变量对所有线程的可见性？"><a href="#18-请谈谈-volatile-有什么特点，为什么它能保证变量对所有线程的可见性？" class="headerlink" title="18. 请谈谈 volatile 有什么特点，为什么它能保证变量对所有线程的可见性？"></a>18. 请谈谈 volatile 有什么特点，为什么它能保证变量对所有线程的可见性？</h1><ul>
+<li>当一个变量被volatile修饰后，具备两个特性：<ul>
+<li>保证此变量对所有线程的可见性，当一条线程修饰了这个变量的值，新值对于其他线程是可以立即得知的，而普通变量做不到这一点</li>
+<li>禁止指令重排序优化，普通变量仅仅能保证在方法执行过程中得到正确结果，但是不保证程序代码的执行顺序</li>
+</ul>
+</li>
+<li>当一个线程被声明为volatile时，线程在写入变量时不会把值缓存在寄存器或者其他地方，而是会把值刷新回主内存。当其他线程读取该共享变量时，会从主内存重新获取最新值，而不是使用当前线程的工作内存中的值 。</li>
+</ul>
+<h1 id="19-既然-volatile-能够保证线程间的变量可见性，是不是就意味着基于-volatile-变量的运算就是并发安全的？"><a href="#19-既然-volatile-能够保证线程间的变量可见性，是不是就意味着基于-volatile-变量的运算就是并发安全的？" class="headerlink" title="19. 既然 volatile 能够保证线程间的变量可见性，是不是就意味着基于 volatile 变量的运算就是并发安全的？"></a>19. 既然 volatile 能够保证线程间的变量可见性，是不是就意味着基于 volatile 变量的运算就是并发安全的？</h1><ul>
+<li>显然不是的，基于volatile变量的运算在并发下不一定是安全的</li>
+<li>Java里面的运算并非原子操作，导致volatile变量的运算在并发下一样是不安全的。</li>
+</ul>
+<h1 id="20-请对比下-volatile-对比-Synchronized-的异同"><a href="#20-请对比下-volatile-对比-Synchronized-的异同" class="headerlink" title="20. 请对比下 volatile 对比 Synchronized 的异同"></a>20. 请对比下 volatile 对比 Synchronized 的异同</h1><ul>
+<li>Synchronized 既能保证可见性，又能保证原子性，而volatile只能保证可见性，无法保证原子性</li>
+</ul>
+<h1 id="21-请谈谈-ThreadLocal-是怎么解决并发安全的？"><a href="#21-请谈谈-ThreadLocal-是怎么解决并发安全的？" class="headerlink" title="21. 请谈谈 ThreadLocal 是怎么解决并发安全的？"></a>21. 请谈谈 ThreadLocal 是怎么解决并发安全的？</h1><ul>
+<li>==ThreadLocal==是Java提供的一种保存线程私有信息的机制，因为其在整个线程生命周期内有效，所以可以方便地在一个线程关联的不同业务模块之间传递信息，比如事务ID、Cookie等上下文相关信息</li>
+<li>==ThreadLocal==为每一个线程维护变量的副本，把共享数据的可见范围限制在同一个线程之内，其实现原理是，在ThreadLocal类中有一个Map，用于存储每一个线程的变量的副本。</li>
+</ul>
+<h1 id="22-很多人都说要慎用-ThreadLocal，谈谈你的理解，使用-ThreadLocal-需要注意些什么？"><a href="#22-很多人都说要慎用-ThreadLocal，谈谈你的理解，使用-ThreadLocal-需要注意些什么？" class="headerlink" title="22. 很多人都说要慎用 ThreadLocal，谈谈你的理解，使用 ThreadLocal 需要注意些什么？"></a>22. 很多人都说要慎用 ThreadLocal，谈谈你的理解，使用 ThreadLocal 需要注意些什么？</h1><ul>
+<li>==ThreadLocal==的实现是基于一个所谓的ThreadLocalMap，在ThreadLocalMap中，它的key是一个弱引用。</li>
+<li>通常弱引用都会和引用队列配合清理机制使用，但是ThreadLocal是个例外，它并没有这么做。这意味着，废弃项目的回收依赖于显式地触发，否则就要等待线程结束，进而回收相应ThreadLocalMap，这就是很多OOM的来源，所以通常都会建议，应用一定要自己负责remove，并且不要和线程池配合，因为worker线程往往是不会退出的。</li>
+</ul>
 
       
 
@@ -300,7 +492,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MS_并发编程</a>
         		</li>
       		
 		</ul>
@@ -356,7 +548,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/10/HTTP/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/11/MS-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -370,18 +562,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/12/11/MS-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          MS_并发编程
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/12/10/MS-Redis/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">MS_Redis</div>
+    <a href="/2020/12/10/HTTP/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTTP</div>
       <i class="icon-circle-right"></i>
     </a>
   
