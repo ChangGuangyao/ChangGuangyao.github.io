@@ -6,15 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: HTTP | Hexo</title>
+  <title>MS_JVM | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/tags/HTTP/index.html">
+  <meta name="description" content="1. Java 类加载过程? 当程序要使用某个类时，如果该类还未被加载到内存中，则系统会通过加载、连接、初始化三步来实现这个类的初始化 加载 Java虚拟机将.class文件读入内存，并为之创建一个Class对象 任何类被使用时都会为其创建一个且仅有一个Class对象 这个Class对象描述了这个类创建出来的对象的所有信息，比如有哪些构造方法，有哪些成员方法，有哪些成员变量等   连接 连接包括验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MS_JVM">
+<meta property="og:url" content="http://example.com/2020/12/11/MS-JVM/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. Java 类加载过程? 当程序要使用某个类时，如果该类还未被加载到内存中，则系统会通过加载、连接、初始化三步来实现这个类的初始化 加载 Java虚拟机将.class文件读入内存，并为之创建一个Class对象 任何类被使用时都会为其创建一个且仅有一个Class对象 这个Class对象描述了这个类创建出来的对象的所有信息，比如有哪些构造方法，有哪些成员方法，有哪些成员变量等   连接 连接包括验">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2020/12/11/MS-JVM/640.webp">
+<meta property="og:image" content="http://example.com/2020/12/11/MS-JVM/markdown_workspace/MS_JVM.assets/640%20(1).webp">
+<meta property="og:image" content="http://example.com/2020/12/11/MS-JVM/markdown_workspace/MS_JVM.assets/640%20(3).webp">
+<meta property="og:image" content="http://example.com/2020/12/11/MS-JVM/markdown_workspace/MS_JVM.assets/QQ图片20201130102140.png">
+<meta property="og:image" content="http://example.com/2020/12/11/MS-JVM/markdown_workspace/MS_JVM.assets/640%20(6).webp">
+<meta property="og:image" content="http://example.com/2020/12/11/MS-JVM/markdown_workspace/MS_JVM.assets/640%20(7).webp">
+<meta property="article:published_time" content="2020-12-11T11:26:06.000Z">
+<meta property="article:modified_time" content="2020-12-11T11:26:42.386Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="MS_JVM">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2020/12/11/MS-JVM/640.webp">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,60 +162,544 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-MS-JVM" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/12/10/HTTP/" class="archive-article-date">
-  	<time datetime="2020-12-10T07:05:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/12/10/HTTP/">HTTP</a>
+    <h1 class="article-title" itemprop="name">
+      MS_JVM
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/12/11/MS-JVM/" class="archive-article-date">
+  	<time datetime="2020-12-11T11:26:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Java-类加载过程"><a href="#1-Java-类加载过程" class="headerlink" title="1. Java 类加载过程?"></a>1. Java 类加载过程?</h1><ul>
+<li>当程序要使用某个类时，如果该类还未被加载到内存中，则系统会通过加载、连接、初始化三步来实现这个类的初始化<ol>
+<li>加载<ol>
+<li>Java虚拟机将.class文件读入内存，并为之创建一个Class对象</li>
+<li>任何类被使用时都会为其创建一个且仅有一个Class对象</li>
+<li>这个Class对象描述了这个类创建出来的对象的所有信息，比如有哪些构造方法，有哪些成员方法，有哪些成员变量等</li>
+</ol>
+</li>
+<li>连接<ul>
+<li>连接包括验证、准备以及解析三个阶段<ol>
+<li>验证阶段：主要的目的是确保被加载的类（.class文件的字节流）满足Java虚拟机规范，不会造成安全错误</li>
+<li>准备阶段：负责为类的静态成员分配内存，并设置默认初始值</li>
+<li>解析阶段：将类的二进制数据中的符号引用替换为直接引用</li>
+</ol>
+</li>
+<li>说明：<ul>
+<li>符号引用。即一个字符串，但是这个字符串给出了一些能够唯一性识别一个方法、一个变量、一个类的相关信息</li>
+<li>直接引用。可以理解为一个内存地址或者一个偏移量。比如类方法、类变量的直接引用是指向方法区的指针；而实例方法，实例变量的直接引用则是从实例的头指针开始算起到这个实例变量位置的偏移量</li>
+<li>比如：<ul>
+<li>调用方法hello（），这个方法的地址是0xaabbccdd，那么hello就是符号引用，0xaabbccdd就是直接引用</li>
+</ul>
+</li>
+<li>在解析阶段，虚拟机会把所有的类名、方法名和字段名这些符号引用替换为具体的内存地址或偏移量，也就是直接引用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>初始化<ul>
+<li>初始化是为标记为常量值的字段赋值的过程，换句话说，只对static修饰的变量或语句块进行初始化</li>
+<li>如果初始化一个类的时候，其父类尚未初始化，则优先初始化其父类</li>
+<li>如果同时包含多个静态变量和静态代码块，则按照自上而下的顺序依次执行</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>小结：<ul>
+<li>类加载过程只是一个类生命周期的一部分，在其前，有编译的过程，只有对源代码编译之后，才能获得能够被虚拟机加载的字节码文件；在其后，还有具体的类使用过程，当使用完成之后，还会在方法区垃圾回收的过程中进行卸载（垃圾回收）</li>
+</ul>
+</li>
+</ul>
+<h1 id="2-在自己的项目里新建一个java-lang包，里面新建了一个String类，能代替系统String吗？"><a href="#2-在自己的项目里新建一个java-lang包，里面新建了一个String类，能代替系统String吗？" class="headerlink" title="2. 在自己的项目里新建一个java.lang包，里面新建了一个String类，能代替系统String吗？"></a>2. 在自己的项目里新建一个java.lang包，里面新建了一个String类，能代替系统String吗？</h1><ul>
+<li>不能，因为根据类加载的双亲委派机制，会将请求转发给父类加载器，父类加载器发现冲突了String就不会加载了</li>
+</ul>
+<h1 id="3-描述一下-JVM-加载-Class-文件的原理机制？"><a href="#3-描述一下-JVM-加载-Class-文件的原理机制？" class="headerlink" title="3. 描述一下 JVM 加载 Class 文件的原理机制？"></a>3. 描述一下 JVM 加载 Class 文件的原理机制？</h1><ul>
+<li>Java中的所有类，都需要由<strong>类加载器</strong>装载到JVM中才能运行</li>
+<li><strong>类加载器</strong>本身也是一个类，而它的工作就是把class文件从硬盘读取到内存中</li>
+<li>在写程序的时候，我们几乎不需要关心类的加载，因为这些都是隐式装载的，除非我们有特殊的用法，像反射，就需要显式地加载所需要的类</li>
+<li>类装载的方式有两种：<ul>
+<li>隐式装载：程序在运行过程中当碰到通过new等方式生成对象时，隐式调用类装载器加载对应的类到JVM中</li>
+<li>显式装载：通过class.forName()等方法，显式加载需要的类</li>
+</ul>
+</li>
+<li>Java类的加载是动态的，它并不会一次性将所有类全部加载后再运行，而是保证程序运行的基础类（像是基类）完全加载到JVM中，至于其他类，则在需要的时候才加载。这当然是为了节省内存开销</li>
+<li>Java的类加载器有三个，对应Java的三种类：<ul>
+<li><strong>Bootstrap Loader</strong>：启动类加载器，是虚拟机自身的一部分。负责将存放在\lib目录中的类库加载到虚拟机中。其无法被Java程序直接引用。负责加载系统类（指的是内置类，像是String，对应于C#中的System类和C/C++标准库中的类）</li>
+<li><strong>ExtClassLoader</strong>：负责加载扩展类（就是继承类和实现类）</li>
+<li><strong>AppClassLoader</strong>：负责加载用户类路径（Class Path）上所指定的类库（程序员自己定义的类）</li>
+</ul>
+</li>
+<li>JVM中，类的加载是由类加载器（ClassLoader）和它的子类来实现的，Java中的类加载器是一个重要的Java运行时系统组件，它负责在运行时查找和装入类文件中的类<ul>
+<li>由于Java跨平台性，经过编译的Java源程序并不是一个可执行程序，而是一个或多个类文件</li>
+<li>当Java程序需要使用某个类时，JVM会确保这个类已经被加载、连接（</li>
+<li>验证、准备和解析）和初始化</li>
+<li>类的加载是指把类的.class文件中的数据读入到内存中，通常是创建一个字节数组读入.class文件，然后产生与所加载类对应的Class对象。加载完成后，Class对象还不完整，所以此时的类还不可用</li>
+</ul>
+</li>
+</ul>
+<h1 id="4-Java-内存分配？"><a href="#4-Java-内存分配？" class="headerlink" title="4. Java 内存分配？"></a>4. Java 内存分配？</h1><h2 id="1-Java内存模型"><a href="#1-Java内存模型" class="headerlink" title="1. Java内存模型"></a>1. Java内存模型</h2><ul>
+<li>Java内存分配主要包括以下几个区域<ul>
+<li>寄存器：我们在程序中无法控制</li>
+<li>程序计数器：是一块较小的内存区域，它可以看做是当前线程所执行的字节码的行号指示器，是程序控制流的指示器，分支、循环、跳转、异常处理、线程恢复等基础功能都需要依赖这个计数器来完成</li>
+<li>栈：存放基本类型的数据和对象的引用，但对象本身不存放在栈中，而是存放在堆中<ul>
+<li>在函数中定义的一些<strong>基本类型的变量数据</strong>和<strong>对象的引用变量</strong>都在函数的栈内存中分配</li>
+<li>当一段代码块定义一个变量时，Java就在栈中为这个变量分配内存空间，当该变量退出该作用域后，Java会自动释放点为该变量所分配的内存空间，该内存空间可以立即被另作他用</li>
+</ul>
+</li>
+<li>堆：存放用new产生的数据（对象）<ul>
+<li>堆内存用来存放由<strong>new创建的对象和数组</strong>。在堆中分配的内存，由Java虚拟机的自动垃圾回收器来管理</li>
+<li>在堆中产生了一个数组或对象后，还可以在栈中定义一个特殊的变量，让栈中这个变量的取值等于数组或对象在堆内存中的首地址，栈中的这个变量就成了数组或对象的引用变量。</li>
+<li>引用变量就相当于是为数组或对象起的一个名称，以后就可以在程序中使用栈中的引用变量来访问堆中的数组或对象</li>
+<li>引用变量就相当于是为数组或者对象起的一个名称</li>
+<li>引用变量是普通的变量，定义时在栈中分配，引用变量在程序运行到其作用域之外后被释放</li>
+<li>而数组和对象本身在堆中分配，即使程序运行到使用new产生数组或者对象的语句所在的代码块之外，数组和对象本身占据的内存不会被释放，数组和对象在没有引用变量指向它的时候，才变为垃圾，不能再被使用，但仍然占据内存空间不放，在随后的一个不确定的时间被垃圾回收器收走（释放掉）</li>
+<li>这也是Java比较占内存的原因</li>
+<li>实际上，栈中的变量指向堆内存中的变量，这就是Java中的指针</li>
+</ul>
+</li>
+<li>静态域：存放对象中用static定义的静态成员</li>
+<li>常量池：存放常量<ul>
+<li>常量池指的是在编译器被确定，并被保存在已编译的.class文件中的一些数据</li>
+<li>除了包含代码中所定义的各种<strong>基本类型（如int、long等）</strong>和<strong>对象类型（如String及数组）</strong>的<strong>常量值（final）</strong>还包含一些以文本形式出现的<strong>符号引用</strong>，比如：<ul>
+<li>类和接口的全限定名</li>
+<li>字段的名称和描述符</li>
+<li>方法的名称和描述符</li>
+</ul>
+</li>
+<li>虚拟机必须为每个被装载的类型维护一个常量池。常量池就是该类型所用到常量的一个有序集合，包括直接常量（String、Integer等）和对其他类型、字段和方法的符号引用</li>
+<li>对于String常量，它的值是在常量池中的。</li>
+<li>而JVM中的常量池在内存当中是以表的形式存在的，对于String类型，有一张固定长度的CONSTANT_String_info表用来存储文字<strong>字符串值</strong>。注意：该表只存储<strong>字符串值</strong>，不存储符号引用</li>
+<li>在程序执行的时候，常量池会存储在方法区（Method Area）中，而不是堆中。</li>
+</ul>
+</li>
+<li>非RAM（随机存取存储器）存储：硬盘等永久存储空间</li>
+</ul>
+</li>
+<li>堆与栈<ul>
+<li>堆：<ul>
+<li>Java的堆是一个运行时数据区，类的对象在堆中分配空间</li>
+<li>这些对象通过new等指令建立，它们不需要程序代码来显式地释放</li>
+<li>堆是由垃圾回收器来负责的，堆的优势是可以动态地分配内存大小，生存期也不必事先告诉编译器，因为它是在运行时动态分配内存的，Java的垃圾收集器会自动收走这些不再使用的数据</li>
+<li>缺点是：由于要在运行时动态分配内存，存取速度较慢</li>
+</ul>
+</li>
+<li>栈：<ul>
+<li>栈的优势是存取速度比堆要快，仅次于寄存器，栈数据可以共享。缺点是，存在栈中的数据大小与生存期必须是确定的，缺乏灵活性</li>
+<li>栈中主要存放一些基本类型的变量数据（int, short, long, byte, float, double, boolean, char）和对象句柄（引用）</li>
+</ul>
+</li>
+<li>栈和常量池中的对象可以共享，堆中的对象不可以共享</li>
+<li>栈中的数据大小和生命周期是可以确定的，当没有引用指向数据时，这个数据就会消失</li>
+<li>堆中的对象由垃圾回收器负责回收，因此大小和生命周期不需要确定，具有很大的灵活性</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-字符串内存分配"><a href="#2-字符串内存分配" class="headerlink" title="2.字符串内存分配"></a>2.字符串内存分配</h2><ul>
+<li><p>对于字符串，其对象的引用都是存储在栈中的，如果是编译器已经创建好（直接用双引号定义）的就存储在常量池中，如果是运行期（new出来的）才能确定的就存储在堆中</p>
+</li>
+<li><p>对于equals相等的字符串，在常量池中永远只有一份，在堆中有多份</p>
+<p><img src="/2020/12/11/MS-JVM/640.webp" alt="640"></p>
+<img src="/2020/12/11/MS-JVM/markdown_workspace\MS_JVM.assets\640 (1).webp" alt="640 (1)" style="zoom:50%;">
+
+</li>
+</ul>
+<h2 id="3-基础类型的变量和常量在内存中的分配"><a href="#3-基础类型的变量和常量在内存中的分配" class="headerlink" title="3. 基础类型的变量和常量在内存中的分配"></a>3. 基础类型的变量和常量在内存中的分配</h2><ul>
+<li><p>对于基础类型的变量和常量，变量和引用存储在栈中，常量存储在常量池中，如以下代码</p>
+<p>![640 (2)](MS-JVM/640 (2).webp)</p>
+<img src="/2020/12/11/MS-JVM/markdown_workspace\MS_JVM.assets\640 (3).webp" alt="640 (3)" style="zoom: 50%;">
+
+<ul>
+<li>编译器先处理int i1=9；首先会在栈中创建一个变量为i1的引用，然后查找栈中是否有9这个值，如果没找到，就将9存放起来，然后将i1指向9</li>
+<li>接着处理int i2=0；在创建完i2的引用变量后，因为在栈中已经有9这个值，便将i2直接指向9</li>
+<li>同理i3也指向9</li>
+</ul>
+</li>
+</ul>
+<h1 id="5-GC-是什么-为什么要有-GC？"><a href="#5-GC-是什么-为什么要有-GC？" class="headerlink" title="5. GC 是什么? 为什么要有 GC？"></a>5. GC 是什么? 为什么要有 GC？</h1><ul>
+<li>GC是垃圾收集的意思</li>
+<li>垃圾回收可以有效地防止内存泄漏，有效地利用内存</li>
+<li>垃圾回收器通常是作为一个单独的低优先级的线程运行，在不可预知的情况下对内存堆中已经死亡的或者长时间没有使用的对象进行清除和回收</li>
+</ul>
+<h1 id="6-简述-Java-垃圾回收机制"><a href="#6-简述-Java-垃圾回收机制" class="headerlink" title="6. 简述 Java 垃圾回收机制"></a>6. 简述 Java 垃圾回收机制</h1><h2 id="1-什么是垃圾回收机制？"><a href="#1-什么是垃圾回收机制？" class="headerlink" title="1. 什么是垃圾回收机制？"></a>1. 什么是垃圾回收机制？</h2><ul>
+<li>当程序创建对象、数组等引用类型实体时，系统会在堆内存中为之分配一块内存区，对象就保存在内存区中，当内存不再被任何引用变量引用时，这块内存就变成了垃圾，等待垃圾回收机制去进行回收</li>
+</ul>
+<h2 id="2-垃圾回收机制的特点"><a href="#2-垃圾回收机制的特点" class="headerlink" title="2. 垃圾回收机制的特点"></a>2. 垃圾回收机制的特点</h2><ul>
+<li>垃圾回收机制只负责回收堆内存中的对象</li>
+<li>程序无法精准控制垃圾回收的运行，垃圾回收在合适的时候进行，当对象永久性失去了引用后，系统会在合适的时候回收它所占的内存</li>
+<li>在垃圾回收机制回收任何对象之前，总会调用它的finalize（）方法，该方法可能使该对象重新复活（使用一个引用变量重新去引用该对象），从而导致垃圾回收机制取消回收</li>
+</ul>
+<h2 id="3-对象在内存中的状态"><a href="#3-对象在内存中的状态" class="headerlink" title="3. 对象在内存中的状态"></a>3. 对象在内存中的状态</h2><ul>
+<li>可达状态：当一个对象创建后，如果有一个以上的引用变量去引用它，则处于可达状态</li>
+<li>可恢复状态：如果程序中的某个对象不再有任何引用变量去引用它，它就进入了可恢复状态，在这种状态下，系统的垃圾回收机制准备回收该对象所占用的内存，在回收该对象前，系统会调用它的finalize（）方法实现资源清理，如果这时有引用变量进行引用该对象，则该对象会再次变为可达状态，否则会变为不可达状态</li>
+<li>不可达状态：当对象和所有引用变量的关联都被切断，且系统已经调用所有对象的finalize（）后，对象依然没有达到可达状态，则该对象永久性失去引用，最后达到不可达状态，系统回收该对象所占有的所有资源</li>
+</ul>
+<h2 id="4-强制垃圾回收"><a href="#4-强制垃圾回收" class="headerlink" title="4. 强制垃圾回收"></a>4. 强制垃圾回收</h2><ul>
+<li>当对象失去引用后，程序不知道什么时候进行资源清理，程序只能控制对象何时不再被任何引用变量引用，决不能控制对象何时被回收</li>
+<li>程序无法控制java垃圾回收的时机，但是可以通知系统进行垃圾回收（强制垃圾回收），但是只是通知，系统是否垃圾回收还是不确定。大部分时候，程序强制系统回收后总会有一些效果</li>
+<li>强制回收方法<ul>
+<li>System.gc（）</li>
+<li>Runtime.getRuntime（）.gc（）</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-什么是finalize方法？"><a href="#5-什么是finalize方法？" class="headerlink" title="5. 什么是finalize方法？"></a>5. 什么是finalize方法？</h2><ul>
+<li>在垃圾回收机制回收某个对象占用的资源之前，通常要求程序调用适当的方法来进行资源的清理，在java中提供了默认的机制来进行资源的清理（finalize（）方法）</li>
+<li>protected void finalize() throws Throwable</li>
+<li>特点：<ul>
+<li>不要主动去调用finalize（）方法，由垃圾回收机制调用</li>
+<li>该方法的调用具有随机性</li>
+<li>在调用该方法的时候，可能使该对象或者系统中的对象重新变成可达状态（有其他对象引用）</li>
+<li>当JVM执行finalize方法出现异常时，垃圾回收机制不会报告异常，程序会继续执行</li>
+</ul>
+</li>
+</ul>
+<h1 id="7-如何判断一个对象是否存活？（或者-GC-对象的判定方法）"><a href="#7-如何判断一个对象是否存活？（或者-GC-对象的判定方法）" class="headerlink" title="7. 如何判断一个对象是否存活？（或者 GC 对象的判定方法）"></a>7. 如何判断一个对象是否存活？（或者 GC 对象的判定方法）</h1><ul>
+<li><p>一共有两种算法：</p>
+<ul>
+<li><p>引用计数算法</p>
+<ul>
+<li><p>给对象中添加一个引用计数器，每当有一个地方引用它时，计数器值就加1；当引用失效时，计数器值就减1；任何时刻计数器为0的对象就是不可能再被使用的对象</p>
+</li>
+<li><p>该算法的缺点是很难解决对象之间相互引用的问题</p>
+<p>![640 (4)](MS-JVM/640 (4).webp)</p>
+<ul>
+<li>A、B对象相互引用，那么A、B对象的引用计数器的值永远都不会为0，A、B就永远都不会被回收，直接造成内存泄漏问题</li>
+</ul>
+</li>
+<li><p>JVM并没有选用引用计数算法来管理内存，主要原因是它很难解决对象之间相互循环引用的问题</p>
+</li>
+</ul>
+</li>
+<li><p><strong>可达性分析算法</strong></p>
+<ul>
+<li><p>可达性分析法的基本思路是通过一系列的GC Roots对象作为起始点，从这些点向下搜索它们引用的对象，这样可以生成一颗引用树，树的节点就是可达的对象。反之，不在树上的对象即可判定对象已死</p>
+<p>![640 (5)](MS-JVM/640 (5).webp)</p>
+<ul>
+<li>D和E对象相互引用，但是它们没有GC Roots根节点的引用指向，所以D和E在下次垃圾回收时会被处死，而ABC对象在GC Roots的引用树上，会视为存活对象</li>
+</ul>
+</li>
+<li><p>可作为GC Roots的对象：作为GC Roots的对象必须是极难被回收的对象，包括了如下几种对象：</p>
+<ul>
+<li>虚拟机栈中引用的对象，如在方法中定义和使用的变量</li>
+<li>方法区中的类静态属性引用的对象，如static修饰的成员变量</li>
+<li>方法区中常量引用的对象，如static和final共同修饰的常量</li>
+<li>本地方法栈中JNI引用的对象，JNI也就是调的native方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>引用类型与垃圾回收时机</p>
+<ul>
+<li>不论是通过以上哪种方式判断对象是否存活，都与引用相关。引用有四种划分：<ul>
+<li>强引用：只要某个对象有强引用与之关联，JVM必定不会回收这个对象，即使在内存不足的情况下，JVM宁愿抛出Out Of Memory错误也不会回收这种对象</li>
+<li>软引用：软引用是用来描述一些有用但并不是必需的对象，比如引用图片地址等，在Java中用java.lang.ref.SoftReference类来表示。对于软引用关联着的对象，只有在内存不足的时候JVM才会回收该对象</li>
+<li>弱引用：弱引用也是用来描述非必需对象的，当JVM进行垃圾回收时，无论内存是否充足，都会回收被弱引用关联的对象，也就是说被弱引用关联的对象，只能生存到下一次垃圾收集发生之前</li>
+<li>虚引用：虚引用和软引用、弱引用不同，它并不影响对象的生命周期。在Java中用java.lang.ref.PhantomReference类表示。如果一个对象与虚引用关联，则跟没有引用与之关联一样，在任何时候都可能被垃圾回收器回收。为一个对象设置虚引用关联的唯一目的就是能在这个对象被收集器回收时收到一个系统通知<ul>
+<li>与弱引用的区别：在GC时会被通知</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="8-垃圾回收器的基本原理是什么？垃圾回收器可以马上回收内存吗？有什么办法主动通知虚拟机进行垃圾回收？"><a href="#8-垃圾回收器的基本原理是什么？垃圾回收器可以马上回收内存吗？有什么办法主动通知虚拟机进行垃圾回收？" class="headerlink" title="8. 垃圾回收器的基本原理是什么？垃圾回收器可以马上回收内存吗？有什么办法主动通知虚拟机进行垃圾回收？"></a>8. 垃圾回收器的基本原理是什么？垃圾回收器可以马上回收内存吗？有什么办法主动通知虚拟机进行垃圾回收？</h1><ul>
+<li>对于GC来说，当程序员创建对象时，GC就开始监控这个对象的地址、大小以及使用情况。<ul>
+<li>通常，GC采用有向图的方式记录和管理堆中的所有对象，通过这种方式确定哪些对象是可达的，哪些对象是不可达的，当GC确定一些对象为不可达时，GC就有责任回收这些内存空间</li>
+</ul>
+</li>
+<li>垃圾回收器可以马上回收内存</li>
+<li>程序员可以手动执行System.gc（）或Runtime.getRuntime（）.gc（），通知GC运行，但是JVM并不保证GC一定会执行</li>
+</ul>
+<h1 id="9-Java-中会存在内存泄漏吗，请简单描述"><a href="#9-Java-中会存在内存泄漏吗，请简单描述" class="headerlink" title="9. Java 中会存在内存泄漏吗，请简单描述"></a>9. Java 中会存在内存泄漏吗，请简单描述</h1><ul>
+<li><p>内存泄漏是指不再被使用的对象或者变量一直被占据在内存中</p>
+</li>
+<li><p>理论上来说，Java是有GC垃圾回收机制的，不再被使用的对象，会被GC自动回收掉，自动从内存中清除。但是，Java也还是存在着内存泄漏的情况，当存在无用但可达的对象，这些对象不能被GC回收，导致耗费内存资源</p>
+</li>
+<li><p>举个例子：</p>
+<ul>
+<li><p>循环申请Object对象，并将所申请的对象放入一个Vector中，如果仅仅释放引用本身，那么Vector仍然引用该对象，所以这个对象对GC来说是不可回收的。</p>
+</li>
+<li><p>因此，如果对象加入到Vector后，还必须从Vector中删除，最简单的方法就是将Vector对象设置为null</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vector v=<span class="keyword">new</span> Vector(<span class="number">5</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="number">10</span>; i++)&#123;</span><br><span class="line">    Object o=<span class="keyword">new</span> Object();</span><br><span class="line">    v.add(o);</span><br><span class="line">    o=<span class="keyword">null</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>此时，所有的Object对象都没有被释放，因为变量v引用这些对象</p>
+</li>
+<li><p>这时候这些Object就是不可用但可达的对象，GC不会帮我们清理的，这就存在了内存泄漏了</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="10-深拷贝和浅拷贝"><a href="#10-深拷贝和浅拷贝" class="headerlink" title="10. 深拷贝和浅拷贝"></a>10. 深拷贝和浅拷贝</h1><ul>
+<li><p>Java中的对象拷贝指的是将一个对象的所有属性（成员变量）拷贝到另一个有着相同类型的对象中去</p>
+</li>
+<li><p>比如，对象A和对象B都属于类S，具有属性a和b，那么对对象A进行拷贝操作赋值给对象B就是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">B.a=A.a；</span><br><span class="line">B.b=A.b；</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Java中的对象拷贝主要分为浅拷贝和深拷贝</p>
+<ul>
+<li>浅拷贝：将原对象或原数组的引用直接赋给新对象或新数组，新对象/新数组只是原对象的一个引用<ul>
+<li>浅拷贝只是复制了对象的引用地址，两个对象指向同一个内存地址，所以修改其中任意的值，另一个值都会随之变化，这就是浅拷贝</li>
+</ul>
+</li>
+<li>深拷贝：创建一个新的对象和数组，将原对象的各项属性的值（数组的所有元素）拷贝过来，是“值”而不是“引用”<ul>
+<li>深拷贝是将对象及值复制过来，两个对象修改其中任意的值另一个值不会改变，这就是深拷贝</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="11-如果对象的引用被置为-null，垃圾收集器是否会立即释放对象占用的内存？"><a href="#11-如果对象的引用被置为-null，垃圾收集器是否会立即释放对象占用的内存？" class="headerlink" title="11. 如果对象的引用被置为 null，垃圾收集器是否会立即释放对象占用的内存？"></a>11. 如果对象的引用被置为 null，垃圾收集器是否会立即释放对象占用的内存？</h1><ul>
+<li>不会立即释放对象占用的内存</li>
+<li>如果对象的引用设置为null，只是断开了当前线程栈帧中对该对象的引用关系，而垃圾收集器是运行在后台的线程，只有当用户线程运行到安全点或者安全区域才会扫描对象引用关系</li>
+<li>扫描到对象没有被引用则会标记对象，这时候仍然不会立即释放该对象内存，因为有些对象是可恢复的（在finalize方法中恢复引用）</li>
+<li>只有确定了对象无法恢复引用的时候才会清除对象内存</li>
+</ul>
+<h1 id="12-简述-Java-内存分配与回收策率以及-Minor-GC-和-Major-GC"><a href="#12-简述-Java-内存分配与回收策率以及-Minor-GC-和-Major-GC" class="headerlink" title="12. 简述 Java 内存分配与回收策率以及 Minor GC 和 Major GC"></a>12. 简述 Java 内存分配与回收策率以及 Minor GC 和 Major GC</h1><ul>
+<li>对象优先在堆的Eden区分配</li>
+<li>大对象直接进入老年代</li>
+<li>长期存活的对象将直接进入老年代</li>
+<li>当Eden区没有足够的空间进行分配时，虚拟机会执行一次Minor GC。Minor GC通常发生在新生代的Eden区，在这个区的对象生存期短，往往发生GC的频率较高，回收速度比较快</li>
+<li>Major GC/Full GC发生在老年代，一般情况下，触发老年代GC的时候不会触发Minor GC，但是通过配置，可以在Full GC之前进行一次Minor GC，这样可以加快老年代的回收速度</li>
+</ul>
+<h1 id="13-JVM-的永久代中会发生垃圾回收么？"><a href="#13-JVM-的永久代中会发生垃圾回收么？" class="headerlink" title="13. JVM 的永久代中会发生垃圾回收么？"></a>13. JVM 的永久代中会发生垃圾回收么？</h1><ul>
+<li>垃圾回收不会发生在永久代，如果永久代满了或者是超过了临界值，会触发完全垃圾回收（Full GC）</li>
+<li>但是仔细查看垃圾收集器的输出信息，就会发现永久代也是被回收的，这就是为什么正确的永久代大小对避免Full GC是非常重要的原因</li>
+</ul>
+<h1 id="14-Java-中垃圾收集的算法有哪些？"><a href="#14-Java-中垃圾收集的算法有哪些？" class="headerlink" title="14. Java 中垃圾收集的算法有哪些？"></a>14. Java 中垃圾收集的算法有哪些？</h1><h2 id="1-标记-清除算法"><a href="#1-标记-清除算法" class="headerlink" title="1. 标记-清除算法"></a>1. 标记-清除算法</h2><ul>
+<li><p>这是垃圾收集算法中最基础的，它的思想就是标记那些要被回收的对象，然后统一回收。这种方法很简单，但是会有两个主要问题：</p>
+<ul>
+<li><p>效率不高，标记和清除的效率都很低</p>
+</li>
+<li><p>会产生大量不连续的内存碎片，导致以后程序在分配较大的对象时，由于没有充足的连续内存而提前触发一次GC动作</p>
+<img src="/2020/12/11/MS-JVM/markdown_workspace\MS_JVM.assets\QQ图片20201130102140.png" alt="QQ图片20201130102140" style="zoom:50%;">
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-复制算法"><a href="#2-复制算法" class="headerlink" title="2. 复制算法"></a>2. 复制算法</h2><ul>
+<li><p>为了解决效率问题，复制算法将可用内存按容量划分相等的两部分，然后每次只使用其中的一块，当第一块内存用完时，就将还存活的对象复制到第二块内存上，然后一次性清除完第一块内存，再将第二块上的对象复制到第一块中</p>
+</li>
+<li><p>但是这种方式，内存的代价太高，每次基本上都要浪费一块内存</p>
+</li>
+<li><p>于是将该算法进行了改进，内存区域不再是按照1:1去划分，而是将内存划分为8:1:1三部分，较大的那份内存叫Eden区，其余两块较小的内存叫Survior区</p>
+</li>
+<li><p>每次都会先使用Eden区，若Eden区满，就将存活对象复制到第二块内存上，然后清除Eden区，如果此时存活的对象太多，以至于Survivor不够时，会将这些对象通过分配担保机制复制到老年代中</p>
+<img src="/2020/12/11/MS-JVM/markdown_workspace\MS_JVM.assets\640 (6).webp" alt="640 (6)" style="zoom:80%;">
+
+</li>
+</ul>
+<h2 id="3-标记-整理算法"><a href="#3-标记-整理算法" class="headerlink" title="3. 标记-整理算法"></a>3. 标记-整理算法</h2><ul>
+<li><p>该算法是为了解决标记-清理算法产生大量内存碎片的问题。当对象存活率较高时，也解决了复制算法的效率问题</p>
+</li>
+<li><p>它的不同之处就是在清除对象的时候先将可回收的对象移动到一端，然后清除掉端边界以外的对象，这样就不会产生内存碎片</p>
+<img src="/2020/12/11/MS-JVM/markdown_workspace\MS_JVM.assets\640 (7).webp" alt="640 (7)" style="zoom:80%;">
+
+</li>
+</ul>
+<h2 id="4-分代收集算法"><a href="#4-分代收集算法" class="headerlink" title="4. 分代收集算法"></a>4. 分代收集算法</h2><ul>
+<li>根据对象的存活周期的不同将内存划分为几块，一般就分为新生代和老年代，根据各个年代的特点采用不同的收集算法。新生代（少量存活）用复制算法，老年代（对象存活率高）用“标记-清理”算法</li>
+</ul>
+<h1 id="15-什么是类加载器，类加载器有哪些？"><a href="#15-什么是类加载器，类加载器有哪些？" class="headerlink" title="15. 什么是类加载器，类加载器有哪些？"></a>15. 什么是类加载器，类加载器有哪些？</h1><ul>
+<li>类加载器按照层次，从顶层到底层，分为以下三种：<ul>
+<li>启动类加载器（Bootstrap ClassLoader）<ul>
+<li>这个类加载器负责将存放在JAVA_HOME/lib下的，或者被-Xbootclasspath参数所指定的路径中的，并且是虚拟机识别的类库加载到虚拟机内存中。启动类加载器无法被Java程序直接引用。</li>
+</ul>
+</li>
+<li>扩展类加载器（Extension ClassLoader）<ul>
+<li>这个加载器负责加载JAVA_HOME/lib/ext目录中的，或者被java.ext.dirs系统变量所指定的路径中的所有类库，开发者可以直接使用扩展类加载器</li>
+</ul>
+</li>
+<li>应用程序类加载器（Application ClassLoader）<ul>
+<li>这个加载器是ClassLoader中getSystemClassLoader()方法的返回值，所以一般也称它为系统类加载器。它负责加载用户类路径(Classpath)上所指定的类库，可直接使用这个加载器，如果应用程序没有自定义自己的类加载器，一般情况下这个就是程序中默认的类加载器</li>
+</ul>
+</li>
+<li>还有一个是用户继承ClassLoader重写的类加载器（自定义类加载器）</li>
+</ul>
+</li>
+</ul>
+<h1 id="16-类加载器双亲委派模型机制？"><a href="#16-类加载器双亲委派模型机制？" class="headerlink" title="16 .类加载器双亲委派模型机制？"></a>16 .类加载器双亲委派模型机制？</h1><ul>
+<li><p>双亲委派模型：</p>
+<p>![640 (8)](MS-JVM/640 (8).webp)</p>
+<p>![640 (9)](MS-JVM/640 (9).webp)</p>
+</li>
+<li><p>双亲委派过程：当一个类加载器收到类加载任务时，立即将任务委派给它的父类加载器去执行，直至委派给最顶层的启动类加载器为止。如果父类加载器无法加载委派给它的类时，将类加载任务退回给它的下一级加载器去执行</p>
+</li>
+<li><p>除了启动类加载器以外，每个类加载器拥有一个父类加载器，用户自定义类加载器的父类加载器是AppClassLoader</p>
+</li>
+<li><p>使用双亲委派模型的好处在于Java类随着它的类加载器一起具备了一种带有优先级的层次关系</p>
+<ul>
+<li>例如类java.lang.Object，它保存在rt.jar中，无论哪一个类加载器要加载这个类，最终都是委派给处于模型最顶端的Bootstrap ClassLoader进行加载，因此Object类在程序的各种类加载器环境中都是同一个类</li>
+<li>如果没有双亲委派模型而是由各个类加载器自行加载的话，如果用户编写了一个java.lang.Object的同名类并放在ClassPath中，那系统中将会出现多个不同的Object类，程序将混乱。</li>
+</ul>
+</li>
+<li><p>双亲委派模型可以保证全限名指定的类只被加载一次</p>
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MS_JVM</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/11/MS-JVM/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/12/11/MS-Spring/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MS_Spring
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/12/11/MS-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MS_并发编程</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -226,9 +722,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
